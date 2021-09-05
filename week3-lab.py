@@ -1,5 +1,6 @@
 '''
 added from pc
+added from laptop
 quarter = 4
 dime = 3
 nickel = 2
