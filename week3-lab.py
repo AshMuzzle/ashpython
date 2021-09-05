@@ -1,6 +1,4 @@
 '''
-added from pc
-added from laptop
 quarter = 4
 dime = 3
 nickel = 2
@@ -50,25 +48,18 @@ wall_height = int(input('Enter wall height (feet):\n'))
 # Calculate and output wall area
 wall_width = int(input('Enter wall width (feet):\n'))
 area = wall_height * wall_width
-cans = area / 350
-cans_ceil = math.ceil(cans)
-red_cost = 35 * cans_ceil
-blue_cost = 25 * cans_ceil
-green_cost = 23 * cans_ceil
+gallon = area/350
+cans = math.ceil(gallon)
+
 
 print('Wall area:', area, "square feet")
-print("Paint needed:",'{:.2f}'.format(cans), "gallons")
-print("Cans needed:", cans_ceil, "can(s)")
+print("Paint needed:",'{:.2f}'.format(gallon), "gallons")
+print("Cans needed:", cans, "can(s)")
 
 color_choice = input("\nChoose a color to paint the wall:\n")
 
-
-if color_choice == "red":
-    print("Cost of purchasing red paint: " + "$" + str(red_cost))
-elif color_choice == "blue":
-    print("Cost of purchasing blue paint: " + "$" + str(blue_cost))
-elif color_choice == "green":
-    print("Cost of purchasing green paint: " + "$" + str(green_cost))
+if color_choice in paint_colors:
+    print("Cost of purchasing", color_choice,"paint: " + "$" + str(paint_colors[color_choice] * cans))
 else:
-    print("Invalid paint")
+    print("Invalid paint color")
 
